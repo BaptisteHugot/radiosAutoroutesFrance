@@ -30,6 +30,7 @@ function getColor(name) {
   name == "VINCI_ALPESPROVENCE" ? '#4363D8' :
   name == "VINCI_LANGUEDOCROUSSILLON" ? '#000000' :
   name == "VINCI_AUVERGNERHONEMEDITERRANE" ? '#007500' :
+  name == "VINCI_TOULOUSE" ? '#A3A300' : 
   '';
 }
 
@@ -38,19 +39,20 @@ function getColor(name) {
 * @param Le nom de la radio concernée
 */
 function getUrl(name) {
-  return name == "SANEF_OUEST" ? 'http://sanef.ice.infomaniak.ch/sanef1077-ouest.mp3' :
-  name == "SANEF_EST" ? 'http://sanef.ice.infomaniak.ch/sanef1077-est.mp3' :
-  name == "SANEF_NORD" ? 'http://sanef.ice.infomaniak.ch/sanef1077-nord.mp3' :
-  name == "EIFFAGE_CENTRE_EST" ? "http://media.autorouteinfo.fr:8000/direct_nord.mp3" :
-  name == "EIFFAGE_RHONE_ALPES" ? 'http://media.autorouteinfo.fr:8000/direct_sud.mp3' :
-  name == "RADIO_ATLANDES" ? 'http://str0.creacast.com/radio_atlandes_autoroute' :
-  name == "VINCI_SUDOUEST" ? 'http://str0.creacast.com/radio_vinci_autoroutes_3' :
-  name == "VINCI_COTEDAZUR" ? 'http://str0.creacast.com/radio_vinci_autoroutes_7' :
-  name == "VINCI_GRANDOUEST" ? 'http://str0.creacast.com/radio_vinci_autoroutes_2' :
-  name == "VINCI_OUESTCENTRE" ? 'http://str0.creacast.com/radio_vinci_autoroutes_1' :
-  name == "VINCI_ALPESPROVENCE" ? 'http://str0.creacast.com/radio_vinci_autoroutes_6' :
-  name == "VINCI_LANGUEDOCROUSSILLON" ? 'http://str0.creacast.com/radio_vinci_autoroutes_4' :
-  name == "VINCI_AUVERGNERHONEMEDITERRANE" ? 'http://str0.creacast.com/radio_vinci_autoroutes_5' :
+  return name == "SANEF_OUEST" ? 'https://sanef.ice.infomaniak.ch/sanef1077-ouest.mp3' :
+  name == "SANEF_EST" ? 'https://sanef.ice.infomaniak.ch/sanef1077-est.mp3' :
+  name == "SANEF_NORD" ? 'https://sanef.ice.infomaniak.ch/sanef1077-nord.mp3' :
+  name == "EIFFAGE_CENTRE_EST" ? 'https://media.autorouteinfo.fr/direct_nord.mp3' :
+  name == "EIFFAGE_RHONE_ALPES" ? 'https://media.autorouteinfo.fr/direct_sud.mp3' :
+  name == "RADIO_ATLANDES" ? 'https://str0.creacast.com/radio_atlandes_autoroute' :
+  name == "VINCI_SUDOUEST" ? 'https://str0.creacast.com/radio_vinci_autoroutes_3' :
+  name == "VINCI_COTEDAZUR" ? 'https://str0.creacast.com/radio_vinci_autoroutes_7' :
+  name == "VINCI_GRANDOUEST" ? 'https://str0.creacast.com/radio_vinci_autoroutes_2' :
+  name == "VINCI_OUESTCENTRE" ? 'https://str0.creacast.com/radio_vinci_autoroutes_1' :
+  name == "VINCI_ALPESPROVENCE" ? 'https://str0.creacast.com/radio_vinci_autoroutes_6' :
+  name == "VINCI_LANGUEDOCROUSSILLON" ? 'https://str0.creacast.com/radio_vinci_autoroutes_4' :
+  name == "VINCI_AUVERGNERHONEMEDITERRANE" ? 'https://str0.creacast.com/radio_vinci_autoroutes_5' :
+  name == "VINCI_TOULOUSE" ? 'https://str0.creacast.com/radio_vinci_autoroutes_8' :
   name == "VINCI_STRASBOURG" ? '' : // Manque lien vers la radio + Shapefile Datagouv pas à jour
   name == "GASCOGNE_FM" ? '' : // Manque lien vers la radio
   name == "NORMANDIE_TRAFIC" ? '': // Manque lien vers la radio
@@ -75,6 +77,7 @@ function getUrl(name) {
   name == "VINCI_ALPESPROVENCE" ? 'Radio1077' :
   name == "VINCI_LANGUEDOCROUSSILLON" ? 'Radio1077' :
   name == "VINCI_AUVERGNERHONEMEDITERRANE" ? 'Radio1077' :
+  name == "VINCI_TOULOUSE" ? 'Radio1077' :
   name == "VINCI_STRASBOURG" ? '' :
   name == "GASCOGNE_FM" ? '' :
   name == "NORMANDIE_TRAFIC" ? '':
@@ -99,6 +102,7 @@ function getName(name){
   name == "VINCI_ALPESPROVENCE" ? 'Vinci Alpes-Provence' :
   name == "VINCI_LANGUEDOCROUSSILLON" ? 'Vinci Languedoc-Roussillon' :
   name == "VINCI_AUVERGNERHONEMEDITERRANE" ? 'Vinci Auvergne-Rhône-Méditerranée' :
+  name == "VINCI_TOULOUSE" ? 'Vinci Toulouse' :
   name == "VINCI_STRASBOURG" ? 'Vinci Strasbourg' :
   name == "GASCOGNE_FM" ? 'Gascogne FM' :
   name == "NORMANDIE_TRAFIC" ? 'Normandie Trafic':
@@ -170,15 +174,14 @@ function onClick(e){
   audio.play();
 
   // On ajoute le flux Twitter et on l'affiche
-  var urlTwitter = getUrlTwitter(layer.feature.properties.name);  
+  var urlTwitter = getUrlTwitter(layer.feature.properties.name);
   twttr.widgets.createTimeline(
   {
     sourceType: "profile",
-    screenName: urlTwitter, // On modifie le compte à afficher
+    screenName: "urlTwitter", // On modifie le compte à afficher
   },
   document.getElementById("fluxTwitter")
-);
-
+  );
 }
 
 /**
