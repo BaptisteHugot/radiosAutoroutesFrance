@@ -1,0 +1,9 @@
+/**
+* Fichier générant les styles qui sont utilisés pour afficher la carte montrant les communes concernées par l'arrêt du cuivre, par département et par date d'arrêt
+*/
+
+#map {
+  /* Carte */
+  height: 100vh;
+  /* Il est nécessaire que la carte ait une hauteur sinon elle n'apparaîtra pas */
+}
