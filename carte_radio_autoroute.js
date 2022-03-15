@@ -178,7 +178,7 @@ function onClick(e){
   twttr.widgets.createTimeline(
   {
     sourceType: "profile",
-    screenName: "urlTwitter", // On modifie le compte à afficher
+    screenName: urlTwitter // On modifie le compte à afficher
   },
   document.getElementById("fluxTwitter")
   );
