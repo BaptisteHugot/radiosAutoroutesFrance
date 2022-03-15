@@ -180,7 +180,12 @@ function onClick(e){
     sourceType: "profile",
     screenName: urlTwitter // On modifie le compte à afficher
   },
-  document.getElementById("fluxTwitter")
+  document.getElementById("fluxTwitter"),
+  {
+    height: 600,
+    chrome: "nofooter",
+    borderColor: "#a80000"
+  }
   );
 }
 
